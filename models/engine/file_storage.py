@@ -66,8 +66,8 @@ class FileStorage:
         for k, v in cls_dict.items():
             obj = cls.__name__ + '.' + id
             if k == obj:
-                return(v)
-        return(None)
+                return (v)
+        return (None)
 
     def count(self, cls=None):
         """
@@ -76,7 +76,7 @@ class FileStorage:
         count = 0
         cls_dict = self.all(cls)
         count = len(cls_dict)
-        return(count)
+        return (count)
 
     def delete(self, obj=None):
         """delete obj from __objects if it’s inside"""
