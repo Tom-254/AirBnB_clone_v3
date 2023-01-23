@@ -59,15 +59,14 @@ class FileStorage:
             pass
 
     def get(self, cls, id):
-        """
-            Retrieves one object if exists
-        """
-        cls_dict = self.all(cls)
-        for k, v in cls_dict.items():
-            obj = cls.__name__ + '.' + id
-            if k == obj:
-                return (v)
-        return (None)
+        """ retrieves one object """
+        c = classes[cls]
+        if c is None:
+            return None
+        for v in self.all(c).values():
+            if v.id == id:
+                return v
+        return None
 
     def count(self, cls=None):
         """
