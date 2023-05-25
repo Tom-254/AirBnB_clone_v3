@@ -7,7 +7,6 @@ from models import place
 from models import review
 from models import user
 
-
 def do_check_id(cls, review_id):
     """
         If the review_id is not linked to any Review object, raise a 404 error
